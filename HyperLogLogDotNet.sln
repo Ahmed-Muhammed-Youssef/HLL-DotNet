@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HyperLogLog", "src\HyperLogLog\HyperLogLog.csproj", "{3C711AC5-3B9A-4615-8D2D-F1EE18A735AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9A957DE6-0644-4D0D-A882-3EC057346EA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HyperLogLog.Tests", "test\HyperLogLog.Tests\HyperLogLog.Tests.csproj", "{89DAB2E4-3123-4672-8904-B6807D658F51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C711AC5-3B9A-4615-8D2D-F1EE18A735AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C711AC5-3B9A-4615-8D2D-F1EE18A735AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C711AC5-3B9A-4615-8D2D-F1EE18A735AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C711AC5-3B9A-4615-8D2D-F1EE18A735AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89DAB2E4-3123-4672-8904-B6807D658F51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89DAB2E4-3123-4672-8904-B6807D658F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89DAB2E4-3123-4672-8904-B6807D658F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89DAB2E4-3123-4672-8904-B6807D658F51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C711AC5-3B9A-4615-8D2D-F1EE18A735AA} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{89DAB2E4-3123-4672-8904-B6807D658F51} = {9A957DE6-0644-4D0D-A882-3EC057346EA3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7E87498-75B1-4DE4-B8FD-13800E04B16D}
+	EndGlobalSection
+EndGlobal
