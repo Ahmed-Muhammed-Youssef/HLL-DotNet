@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 
 namespace HyperLogLog.Tests;
 
@@ -58,5 +58,31 @@ public class HllEstimatorTests
 
         // Act & Assert
         Assert.Throws<ArgumentOutOfRangeException>(() => HllEstimator.Estimate(data, invalidPrefixLength));
+    }
+
+    [Fact]
+    public void Estimate_LargeDataset_ReturnsAccurateEstimate()
+    {
+        // Arrange
+        int numberOfItems = 10_000_000;
+        int prefixLength = 14; // 2^14 = 16384 registers, good for high accuracy
+        var data = new List<byte[]>(numberOfItems);
+
+        for (int i = 0; i < numberOfItems; i++)
+        {
+            string value = "item_" + i;
+            data.Add(Encoding.UTF8.GetBytes(value));
+        }
+
+        // Act
+        double estimate = HllEstimator.Estimate(data, prefixLength);
+
+        // Assert
+        double error = Math.Abs(estimate - numberOfItems) / numberOfItems;
+
+        // HyperLogLog has an expected standard error of 1.04 / sqrt(m), where m = 2^prefixLength
+        double expectedError = 1.04 / Math.Sqrt(Math.Pow(2, prefixLength));
+
+        Assert.InRange(error, 0, expectedError * 3); // Allow a 3σ error margin for safety
     }
 }
