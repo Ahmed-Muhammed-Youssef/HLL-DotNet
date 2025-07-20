@@ -45,7 +45,7 @@ namespace HyperLogLog
                 int index = Utilities.ExtractPrefix(hash, prefixLength);
 
                 // calcaulte number of zeros after the prefix
-                int numberOfZeros = Utilities.CalculateZeros(index, hash) + 1;
+                int numberOfZeros = Utilities.CalculateZeros(prefixLength, hash) + 1;
 
                 accumilator[index] = Math.Max(accumilator[index], numberOfZeros);
             }
